@@ -1,0 +1,253 @@
+<html><body><script>
+/*
+	
+	This assignment is individual work only!
+	
+	I certify that I have written this code myself. Nobody else has written
+	it for me. I have not copied and pasted it from somebody else. I have
+	solved these problems myself using the tools we have learned in class.
+	
+	If I am found guilty of breaking these rules or conducting other dishonest
+	actions while working on this assignment, I understand that I will 
+	receive a score of 0 for this assignment, and that the instructor may
+	report my dishonesty for a conduct review by the Dean of Student Affairs
+	which could result in an F in this course.
+	
+	I acknowledge the above rules of this assignment, 
+	
+	NAME:  Alex Pierce
+	DATE:  02/26/21
+	CWID:  20120521
+
+*/
+
+/*
+------------------------------------------------------------
+Upload you code to the dropbox by the due date. Comment out
+code that isn't working. Do not alter any of the text in this
+template; just add your code.
+
+NOTE: Only use prompt() and and document.writeln() for I/O.
+------------------------------------------------------------
+Problem 1: 	Circle Fun
+
+	Given an input sequence of "a"s for "area", "c"s
+	for "circumference" and numbers representing radius values,
+	print out all the calculations. Input format is below.
+	
+	NOTE: The input could contain any number of "a" and "c" pairs
+	and they could be in any order!! Also note that the "a" and "c"
+	pairing do not neccessarily refer to the same circle.
+	
+	Examples:
+	
+		Input: 		"a 7,c 8;a 2,c 1;c 88,a 31"
+
+		Output:		Area 1: 153.94
+					Circumference 1: 50.27
+					Area 2: 12.57
+					Circumference 2: 6.28
+					Area 3: 3019.07
+					Circumference 3: 552.92
+
+*/
+/*
+let input = prompt("Enter a series of radius values and a for area or c for circumference");
+let array = input.split(";");
+let areaCount = 1;
+let circumferenceCount = 1;
+for (let i=0; i < array.length; i++){
+    let array2 = array[i].split(",");
+    let array3 = array2[0].split(" ");
+    if (array3[0] == "a"){
+        var area = parseFloat(((array3[1])**2) * 3.14);
+    }
+    else {
+        var circumference = parseFloat((array3[1]) * 3.14 * 2);
+    }
+    let array4 = array2[1].split(" ");
+    if (array4[0] == "a"){
+        var area = parseFloat(((array4[1])**2) * 3.14);
+    }
+    else {
+        var circumference = parseFloat((array4[1]) * 3.14 * 2);
+    }
+    document.writeln("Area " + areaCount + ": " + area);
+    areaCount++;
+    document.writeln("<br>");
+    document.writeln("Circumference " + circumferenceCount + ": " + circumference);
+    circumferenceCount++;
+    document.writeln("<br>");
+}
+*/
+/*
+
+Problem 2: Lucky Pattern
+
+	Given an input sequence of numbers separate by spaces, 
+	output "I'm feeling lucky!!" if the pattern 5 ? 7 is present,
+	where ? is any number. Otherwise output ":("
+	
+	Examples:
+	
+		Input: 		"93 45 22 33 5 1 7"
+		Output:		I'm feeling lucky!!
+		Input: 		"18 53 5 176 7 7 8 9 10"
+		Output:		I'm feeling lucky!!
+		Input: 		"93 45 22 33 5 1 7"
+		Output:		I'm feeling lucky!!
+		Input: 		"1 2 3"
+		Output:		:(
+		
+*/
+    
+/*
+let input = prompt("Enter a series of numbers seperated by space");
+let array = input.split(" ");
+let found = false;
+for (let i=0; i<array.length; i++){
+    if (array[i] == "5" && array[i+2] == "7"){
+        found = true;
+        break;
+    }
+}
+if (found) {
+    document.writeln("I'm feeling lucky!!");
+}
+else{
+    document.writeln(":(");
+}
+*/
+    
+/*
+
+Problem 3: 	Produce Aisle
+
+	Given a input sequence of varies products in the Produce Aisle, 
+	display a total weight of each produce item. The format of the input
+	and the output is shown below. Each number refers to the weight
+	of an individual item in ounces. There could be any number of
+	items and any number of types of items in the input.
+	
+	Examples:
+	
+		Input: 		"Mangos,5.6,7.2,8.9,4.4;Onions,3.2,4.2,3.1;Peppers,1.5,3.2,2.9,1.9,3.9,4.9"
+
+		Output:		Mangos: Count = 4, Total Weight = 26.1 
+					Onions: Count = 3, Total Weight = 10.5
+					Peppers: Count = 6, Total Weight = 18.3
+		
+*/
+/*
+let input = prompt("Enter a product and its weights seperated by commas. Seperate each product by semicolon");
+let array = input.split(";");
+let productCount = 0;
+for (let i=0; i < array.length; i++) {
+    let array2 = array[i].split(",");
+    let totalWeight = 0;
+    for (let j=1; j < array2.length; j++){
+        totalWeight += parseFloat(array2[j]);
+    }
+    productCount = array2.length-1; 
+    document.writeln(array2[0] + ": Count = " + productCount + ", Total Weight = " + totalWeight);
+    document.writeln("<br>");
+}
+*/
+/*
+
+Problem 4: 	Guessing Game
+
+	Ask the user to enter any (whole) number. If the number is equal to a
+	number that you have hardcoded in code, then output "That's right! Amazing!"
+	If it is not equal to the number, give the user a "higher" or "lower" output
+	to help them narrow in on the answer.
+	
+	Examples (assume 42 is the hardcoded number):
+	
+		Input: 42
+		Output: That's right! Amazing!
+		
+		Input: 3
+		Output: higher	 (USE an alert() to display higher/lower)
+		Input: 40
+		Output: higher	 (USE an alert() to display higher/lower)
+		Input: 43
+		Output: lower	 (USE an alert() to display higher/lower)
+		Input: 42
+		Output: That's right! Amazing!
+	
+*/
+/*
+let secretNumber = 42;
+let correct = false;
+while(!correct){
+    let input = prompt("Enter a whole number:");
+    if (input == 42){
+        document.writeln("That's right! Amazing!");
+        correct = true;
+    }
+    else{
+        if (input < 42){
+            alert("higher");
+        }
+        else {
+            alert("lower")
+        }
+    }
+}
+*/
+/*
+
+Problem 5: 	Morse Code
+
+	Convert a Morse Code input String to alphabet characters. 
+	The input is made up of dots (.) and dashes (-) for the Morse Code
+	symbols and commas (,) to separate characters and semicolons (;)to
+	separate words. You can look up the Morse codes for alphabet characters
+	online. Each letter is precedes by a "U" or "L" to indicate if you
+	should output it as Uppercase of Lowercase, respectively
+	
+	Examples:
+	
+		Input: "U...,U---,U..."
+		Output: "SOS"
+		
+		Input: "U...,U---,U...;L...,L---,L...;U...,L---,U..."
+		Output: "SOS sos SoS"
+		
+		Input: "U-.-.,L---,L..-.,U-.-.;U.-.,L---,L-.-.,L-.-,L..."
+		Output: "CofC Rocks"
+		
+*/
+    
+/*
+let input = prompt("Enter morse code: ");
+let letterArray = ["a","b", "c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+let morseCode = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."];
+let wordArray = input.split(";");
+let word ="";
+for(let i=0; i < wordArray.length; i++){
+    let morseLetter = wordArray[i].split(",");
+    for (let j=0; j < morseLetter.length; j++){
+        let letter = morseLetter[j].substring(1);
+        let position = morseCode.indexOf(letter);
+        if (morseLetter[j][0] == "L"){
+            word = word + letterArray[position];
+        }
+        else {
+            word = word + letterArray[position].toUpperCase();
+        }
+    }
+    word += " "
+}
+document.writeln(word);
+*/   
+
+
+
+
+
+
+
+</script></body></html>
+
